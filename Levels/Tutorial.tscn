@@ -1,0 +1,207 @@
+[gd_scene load_steps=14 format=3 uid="uid://8gato7pfx3ri"]
+
+[ext_resource type="PackedScene" uid="uid://bergn36fhp5ky" path="res://Space/Ambience/Background.tscn" id="1_8lhii"]
+[ext_resource type="PackedScene" uid="uid://kwiept7knikd" path="res://Space/Player/Player_Ship.tscn" id="2_4d44r"]
+[ext_resource type="PackedScene" uid="uid://c80euy6kwcyw1" path="res://Space/Ambience/Rocks_Large_1.tscn" id="3_ggrfr"]
+[ext_resource type="PackedScene" uid="uid://b57cf4rihsgml" path="res://Space/Ambience/Rocks_LargeIsh.tscn" id="4_vpak1"]
+[ext_resource type="PackedScene" uid="uid://bryxdnc0au6x5" path="res://Space/Resources/Ice_Medium_1.tscn" id="5_4w4cy"]
+[ext_resource type="PackedScene" uid="uid://bl4mc4i7x0w40" path="res://Space/Resources/Ice_Large_1.tscn" id="5_ggrfr"]
+[ext_resource type="PackedScene" uid="uid://danqnqypu6qo1" path="res://Space/Resources/Ice_Small.tscn" id="6_4d44r"]
+[ext_resource type="PackedScene" uid="uid://cihrfbchjse7p" path="res://UI/InGame/Fuel.tscn" id="6_8lhii"]
+[ext_resource type="PackedScene" uid="uid://bkpu4iees54af" path="res://Space/Ambience/Rocks_Medium.tscn" id="10_8lhii"]
+[ext_resource type="PackedScene" uid="uid://bbsmcoclhkro6" path="res://Space/Ambience/Rocks_Small.tscn" id="11_uwq88"]
+[ext_resource type="PackedScene" uid="uid://cdlpb2td83gxu" path="res://Space/Enemies/Springer.tscn" id="12_ydue1"]
+[ext_resource type="PackedScene" uid="uid://h254o0txt38r" path="res://Globals/GameConditions/Win_Condition.tscn" id="13_uwq88"]
+[ext_resource type="AudioStream" uid="uid://cmag848m1651e" path="res://Assets/Music/Tutorial_2024-03-06_01.ogg" id="13_ydue1"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_8lhii")]
+
+[node name="Ice" type="Node2D" parent="."]
+
+[node name="IceLarge1" parent="Ice" instance=ExtResource("5_ggrfr")]
+position = Vector2(2131, -906)
+
+[node name="IceMedium1" parent="Ice" instance=ExtResource("5_4w4cy")]
+position = Vector2(1950, -1021)
+
+[node name="IceMedium2" parent="Ice" instance=ExtResource("5_4w4cy")]
+position = Vector2(1973, -868)
+
+[node name="IceMedium4" parent="Ice" instance=ExtResource("5_4w4cy")]
+position = Vector2(2092, -1025)
+
+[node name="IceMedium3" parent="Ice" instance=ExtResource("5_4w4cy")]
+position = Vector2(2008, -967)
+
+[node name="IceSmall" parent="Ice" instance=ExtResource("6_4d44r")]
+position = Vector2(1393, -676)
+
+[node name="Rocks" type="Node2D" parent="."]
+
+[node name="RocksLarge" parent="Rocks" instance=ExtResource("3_ggrfr")]
+position = Vector2(2153, -1431)
+
+[node name="RocksLarge2" parent="Rocks" instance=ExtResource("4_vpak1")]
+position = Vector2(2404, -1611)
+
+[node name="RocksMedium" parent="Rocks" instance=ExtResource("10_8lhii")]
+position = Vector2(2503, -1450)
+
+[node name="RocksMedium2" parent="Rocks" instance=ExtResource("10_8lhii")]
+position = Vector2(2585, -1461)
+
+[node name="RocksMedium3" parent="Rocks" instance=ExtResource("10_8lhii")]
+position = Vector2(2250, -1657)
+
+[node name="RocksSmall" parent="Rocks" instance=ExtResource("11_uwq88")]
+position = Vector2(2508, -1372)
+
+[node name="RocksSmall2" parent="Rocks" instance=ExtResource("11_uwq88")]
+position = Vector2(2324, -1364)
+
+[node name="RocksSmall3" parent="Rocks" instance=ExtResource("11_uwq88")]
+position = Vector2(2611, -1523)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = 621.0
+offset_top = 62.0
+offset_right = 976.0
+offset_bottom = 137.0
+scale = Vector2(2, 2)
+text = "Press W or S to move your ship
+forwards or backwards, respectively.
+You can also up and down arrow keys for this."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 676.0
+offset_top = -491.0
+offset_right = 1002.0
+offset_bottom = -390.0
+rotation = 0.0947325
+scale = Vector2(2, 2)
+text = "Similar to moving your ship,
+you can turn it with A and D
+to the left or right respecively.
+The left and right arrow keys work as well."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 1559.0
+offset_top = -1148.0
+offset_right = 1885.0
+offset_bottom = -1021.0
+rotation = 1.41204
+scale = Vector2(2, 2)
+text = "Simply running your ship costs fuel.
+1 fuel per second.
+You can gain new fuel by
+ collecting tiny ice fragments.
+like this ->"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 2165.0
+offset_top = -980.0
+offset_right = 2491.0
+offset_bottom = -853.0
+rotation = 1.56591
+scale = Vector2(2, 2)
+text = "You can also use your
+SPACE LASER
+to break down bigger Ice chunks.
+However, this costs an 
+additional 5 fuel per second"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Labels"]
+offset_left = 2178.0
+offset_top = -1669.0
+offset_right = 2389.0
+offset_bottom = -1620.0
+rotation = 0.748125
+scale = Vector2(2, 2)
+text = "Those are rocks.
+You can't fly through them."
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Labels"]
+offset_left = 3034.0
+offset_top = -941.0
+offset_right = 3374.0
+offset_bottom = -814.0
+rotation = 1.64222
+scale = Vector2(2, 2)
+text = "This is your enemy.
+Some kind of space bug.
+You win the level once all of them are killed.
+(With your SPACE LASER)
+Don't worry, they can't feel anything"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Labels"]
+offset_left = 2760.0
+offset_top = -314.0
+offset_right = 2829.0
+offset_bottom = -291.0
+rotation = 2.07829
+text = "probably"
+
+[node name="Label8" type="Label" parent="Labels"]
+offset_left = 2122.0
+offset_top = -543.0
+offset_right = 2276.0
+offset_bottom = -520.0
+rotation = 1.67559
+scale = Vector2(1.75, 1.75)
+text = "(with the space key)"
+
+[node name="Label9" type="Label" parent="Labels"]
+offset_left = 637.0
+offset_top = 270.0
+offset_right = 992.0
+offset_bottom = 345.0
+scale = Vector2(2, 2)
+text = "Even better:
+You can slow down /brake
+by pressing shift or ctrl"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="Labels"]
+offset_left = 1320.0
+offset_top = -1086.0
+offset_right = 1646.0
+offset_bottom = -959.0
+rotation = 1.51162
+scale = Vector2(1.75, 1.75)
+text = "It is basically frozen fuel for you."
+horizontal_alignment = 1
+
+[node name="Springer" parent="." instance=ExtResource("12_ydue1")]
+position = Vector2(2673, -615)
+rotation = 2.25245
+jump_speed = 0
+normal_speed = 0
+jump_cooldown = 1
+
+[node name="Playership" parent="." instance=ExtResource("2_4d44r")]
+position = Vector2(579, 307)
+start_fuel = 9042.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fuel" parent="CanvasLayer" instance=ExtResource("6_8lhii")]
+metadata/_edit_use_anchors_ = true
+
+[node name="WinCondition" parent="CanvasLayer" instance=ExtResource("13_uwq88")]
+is_active = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ydue1")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

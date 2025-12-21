@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cihrfbchjse7p"]
+
+[ext_resource type="Script" uid="uid://bdrcxknp7xddk" path="res://UI/InGame/fuel.gd" id="1_wwe4x"]
+
+[node name="Fuel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wwe4x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = 56.0
+offset_bottom = 42.0
+text = "Fuel: 100"

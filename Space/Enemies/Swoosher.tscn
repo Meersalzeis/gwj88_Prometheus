@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b72tjg3jqcuy3"]
+
+[ext_resource type="Script" uid="uid://c12nuxxgxtp0l" path="res://Space/Enemies/springer.gd" id="1_c8dhn"]
+[ext_resource type="Texture2D" uid="uid://dwypgo0f1mdto" path="res://Assets/MyOwnKrita/Alien4.png" id="1_igi83"]
+[ext_resource type="Script" uid="uid://cn54wbkqchwt1" path="res://Space/Enemies/hurtbox.gd" id="2_mt3ql"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c8dhn"]
+radius = 22.0
+height = 90.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7tyu"]
+radius = 18.0
+height = 82.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt3ql"]
+size = Vector2(27, 62)
+
+[node name="Swoosher" type="CharacterBody2D" groups=["Enemy", "Laser_Interaction"]]
+collision_layer = 10
+collision_mask = 10
+script = ExtResource("1_c8dhn")
+jump_speed = 45000
+normal_speed = 8000
+jump_duration = 1.5
+turn_speed_base = 1.046
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_igi83")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(28, -6, 36, -19, 36, -29, 29, -35, 17, -37, 10, -35, 15, -29, 16, -22, 12, -22, 8, -27, 5, -22, -3, -37, -14, -46, -16, -45, -16, -38, -25, -46, -31, -49, -33, -46, -28, -35, -32, -35, -31, -24, -30, -19, -26, -21, -26, -17, -23, -16, -18, -18, -14, -14, -14, -6, -17, -2, -23, -2, -26, -5, -28, -1, -32, -2, -37, 14, -34, 15, -34, 19, -40, 27, -38, 29, -25, 24, -20, 20, -20, 31, -17, 32, -3, 20, 3, 12, 7, 18, 10, 18, 16, 16, 19, 20, 18, 25, 10, 27, 10, 30, 15, 34, 24, 39, 32, 38, 39, 33, 37, 20, 30, 6, 28, 2, 29, -2)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_mt3ql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-23, -8)
+shape = SubResource("CapsuleShape2D_c8dhn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25, 1)
+shape = SubResource("CapsuleShape2D_p7tyu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6.5, -8)
+shape = SubResource("RectangleShape2D_mt3ql")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

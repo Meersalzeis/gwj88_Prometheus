@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57cf4rihsgml"]
+
+[ext_resource type="Texture2D" uid="uid://b7c0xo663eg3k" path="res://Assets/kenney_space-shooter-extension/PNG/Sprites/Meteors/spaceMeteors_004.png" id="1_n0nr2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rok0w"]
+radius = 104.043
+
+[node name="RocksLargeIsh" type="RigidBody2D"]
+collision_layer = 9
+collision_mask = 9
+gravity_scale = 0.0
+sleeping = true
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_n0nr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CircleShape2D_rok0w")

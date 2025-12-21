@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxmwlqpj8fw1"]
+
+[ext_resource type="Script" uid="uid://sdy2iel3xpr4" path="res://Space/Enemies/wave.gd" id="1_ckq82"]
+
+[node name="Wave" type="Node2D" groups=["Enemy"]]
+script = ExtResource("1_ckq82")

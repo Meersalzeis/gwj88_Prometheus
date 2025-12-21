@@ -1,0 +1,216 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctxppswqmrob0"]
+
+[ext_resource type="PackedScene" uid="uid://bergn36fhp5ky" path="res://Space/Ambience/Background.tscn" id="1_6a4eh"]
+[ext_resource type="Script" uid="uid://b6l81mlo3x6ee" path="res://UI/OutGameElements/SceneChangeButton.gd" id="1_muecg"]
+[ext_resource type="PackedScene" uid="uid://kwiept7knikd" path="res://Space/Player/Player_Ship.tscn" id="2_qjmwu"]
+[ext_resource type="PackedScene" uid="uid://c80euy6kwcyw1" path="res://Space/Ambience/Rocks_Large_1.tscn" id="4_2rl30"]
+[ext_resource type="PackedScene" uid="uid://bkpu4iees54af" path="res://Space/Ambience/Rocks_Medium.tscn" id="5_27718"]
+[ext_resource type="PackedScene" uid="uid://bbsmcoclhkro6" path="res://Space/Ambience/Rocks_Small.tscn" id="6_3wko5"]
+[ext_resource type="PackedScene" uid="uid://baicyfql8i5c" path="res://Space/Enemies/Scoutling.tscn" id="7_ea2bh"]
+[ext_resource type="AudioStream" uid="uid://m73njofawdfk" path="res://Assets/Music/MM_2024-02-14_L02.ogg" id="8_27718"]
+[ext_resource type="PackedScene" uid="uid://uqq44ihsvgnx" path="res://UI/OutGameElements/MusicButton.tscn" id="8_fci4q"]
+[ext_resource type="Texture2D" uid="uid://cbotd8bjj0bw4" path="res://Assets/MyOwnKrita/Music_Sound_smol.png" id="9_s7cpr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rl30"]
+font_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Deco" type="Node2D" parent="."]
+
+[node name="Background" parent="Deco" instance=ExtResource("1_6a4eh")]
+position = Vector2(1037, 546)
+
+[node name="RocksLarge" parent="Deco" instance=ExtResource("4_2rl30")]
+position = Vector2(1116, 616)
+
+[node name="RocksMedium" parent="Deco" instance=ExtResource("5_27718")]
+position = Vector2(944, 597)
+
+[node name="RocksMedium2" parent="Deco" instance=ExtResource("5_27718")]
+position = Vector2(1042, 444)
+
+[node name="RocksSmall" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(864, 581)
+
+[node name="RocksSmall2" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(1015, 501)
+
+[node name="RocksSmall3" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(1095, 402)
+
+[node name="RocksSmall4" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(948, 403)
+
+[node name="RocksSmall5" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(981, 680)
+
+[node name="RocksMedium3" parent="Deco" instance=ExtResource("5_27718")]
+position = Vector2(1159, 472)
+
+[node name="RocksSmall6" parent="Deco" instance=ExtResource("6_3wko5")]
+position = Vector2(1240, 460)
+
+[node name="Scoutling" parent="Deco" instance=ExtResource("7_ea2bh")]
+position = Vector2(962, 109)
+rotation = 2.13109
+normal_speed = 0
+turn_speed_base = 0.0
+
+[node name="Playership" parent="Deco" instance=ExtResource("2_qjmwu")]
+position = Vector2(180, 150)
+rotation = 0.401426
+acc = 0
+de_acc = 0
+turn = 0.0
+max_velo = 0
+laser_base_cost_per_second = 0.0
+
+[node name="Laser" parent="Deco/Playership" index="1"]
+position = Vector2(-735, -37)
+rotation = -1.04732
+
+[node name="Camera2D" parent="Deco/Playership" index="3"]
+position = Vector2(-224.301, -67.7441)
+rotation = -0.401426
+anchor_mode = 0
+zoom = Vector2(1, 1)
+
+[node name="Selection" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Selection"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Selection/VBoxContainer"]
+layout_mode = 2
+text = "Project Prometheus:"
+label_settings = SubResource("LabelSettings_2rl30")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Selection/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Selection/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Orth_Cloud" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Orth Cloud"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Orth_Cloud.tscn"
+
+[node name="Scattered Disc" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Scattered Disc"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Scattered_Disc.tscn"
+
+[node name="Kuiper Belt" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Kuiper Belt"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Kuiper_Belt.tscn"
+
+[node name="Neptune" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Neptune"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Neptune.tscn"
+
+[node name="Saturn" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Saturn Rings"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Saturn_Rings.tscn"
+
+[node name="Earth Orbit" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Earth Orbit"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Earth Orbit.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Selection/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Tutorial" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+script = ExtResource("1_muecg")
+scene_path = "res://Levels/Tutorial.tscn"
+
+[node name="Credits" type="Button" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+script = ExtResource("1_muecg")
+scene_path = "res://UI/Credits.tscn"
+
+[node name="Audio" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 112.0
+offset_top = 345.0
+offset_right = 152.0
+offset_bottom = 385.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 204.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+
+[node name="MusicButton" parent="Audio/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("mm_music_player") instance=ExtResource("8_fci4q")]
+layout_mode = 2
+mm_music_player = NodePath("../../../../AudioStreamPlayer")
+
+[node name="TextureRect" type="TextureRect" parent="Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_s7cpr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_27718")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="easier" type="Label" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 242.0
+offset_right = 470.0
+offset_bottom = 265.0
+text = "easier ^"
+
+[node name="harder" type="Label" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 418.0
+offset_right = 466.0
+offset_bottom = 441.0
+text = "harder ∨"
+
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Orth_Cloud" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Orth_Cloud" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Scattered Disc" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Scattered Disc" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Kuiper Belt" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Kuiper Belt" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Neptune" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Neptune" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Saturn" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Saturn" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Earth Orbit" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Earth Orbit" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer/Tutorial" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer/Tutorial" method="_on_pressed"]
+[connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer/Credits" method="_on_pressed"]
+
+[editable path="Deco/Playership"]

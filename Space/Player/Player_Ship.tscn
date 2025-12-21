@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://kwiept7knikd"]
+
+[ext_resource type="Script" uid="uid://b88o1sb3pj8py" path="res://Space/Player/player_ship.gd" id="1_q8dip"]
+[ext_resource type="Texture2D" uid="uid://ds5bqkchw6t3j" path="res://Assets/kenney_space-shooter-redux/PNG/playerShip1_blue.png" id="2_q8dip"]
+[ext_resource type="Script" uid="uid://d1okjk37dno6o" path="res://Space/Player/laser.gd" id="3_uyynw"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xlx4t"]
+points = PackedVector2Array(8, -35, 12, -10, 45, 0, 45, 20, 0, 35, -45, 20, -45, 0, -12, -10, -8, -35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3vd4"]
+size = Vector2(10, 213)
+
+[node name="Playership" type="CharacterBody2D" groups=["Player_Ship"]]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_q8dip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_xlx4t")
+
+[node name="Laser" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_uyynw")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Laser"]
+position = Vector2(0, -145.5)
+shape = SubResource("RectangleShape2D_h3vd4")
+
+[node name="Line2D3" type="Line2D" parent="Laser"]
+points = PackedVector2Array(0, -37, 0, -255)
+width = 15.0
+default_color = Color(0.937658, 0.521934, 0.44214, 0.588235)
+
+[node name="Line2D2" type="Line2D" parent="Laser"]
+points = PackedVector2Array(0, -37, 0, -252.5)
+default_color = Color(1, 0.352941, 0.447059, 0.784314)
+
+[node name="Line2D" type="Line2D" parent="Laser"]
+points = PackedVector2Array(0, -37, 0, -250)
+width = 5.0
+default_color = Color(1, 0, 0.447059, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q8dip")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 19)
+ignore_rotation = false
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="Laser" to="Laser" method="_on_body_entered"]

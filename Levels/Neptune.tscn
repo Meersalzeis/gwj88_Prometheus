@@ -1,0 +1,266 @@
+[gd_scene load_steps=15 format=3 uid="uid://wbhxisfswk6g"]
+
+[ext_resource type="PackedScene" uid="uid://bergn36fhp5ky" path="res://Space/Ambience/Background.tscn" id="1_gvssk"]
+[ext_resource type="PackedScene" uid="uid://kwiept7knikd" path="res://Space/Player/Player_Ship.tscn" id="2_3uw6p"]
+[ext_resource type="PackedScene" uid="uid://c8xgpsvonmyff" path="res://Space/Enemies/Swarmer.tscn" id="2_s0gem"]
+[ext_resource type="PackedScene" uid="uid://bryxdnc0au6x5" path="res://Space/Resources/Ice_Medium_1.tscn" id="2_t6mxh"]
+[ext_resource type="PackedScene" uid="uid://bkpu4iees54af" path="res://Space/Ambience/Rocks_Medium.tscn" id="3_b4hyu"]
+[ext_resource type="PackedScene" uid="uid://danqnqypu6qo1" path="res://Space/Resources/Ice_Small.tscn" id="3_hdu6k"]
+[ext_resource type="PackedScene" uid="uid://b57cf4rihsgml" path="res://Space/Ambience/Rocks_LargeIsh.tscn" id="3_pcp2h"]
+[ext_resource type="PackedScene" uid="uid://cihrfbchjse7p" path="res://UI/InGame/Fuel.tscn" id="3_s0gem"]
+[ext_resource type="PackedScene" uid="uid://h254o0txt38r" path="res://Globals/GameConditions/Win_Condition.tscn" id="5_pcp2h"]
+[ext_resource type="PackedScene" uid="uid://c80euy6kwcyw1" path="res://Space/Ambience/Rocks_Large_1.tscn" id="6_i482n"]
+[ext_resource type="PackedScene" uid="uid://bw24u14yict4q" path="res://Globals/GameConditions/Loose_Condition.tscn" id="6_noknm"]
+[ext_resource type="PackedScene" uid="uid://bbsmcoclhkro6" path="res://Space/Ambience/Rocks_Small.tscn" id="7_cl0c0"]
+[ext_resource type="PackedScene" uid="uid://nxmwlqpj8fw1" path="res://Space/Enemies/Wave.tscn" id="8_hdu6k"]
+[ext_resource type="AudioStream" uid="uid://xc2lqllqlsks" path="res://Assets/Music/Fight3_2024-03-30_01_L02.ogg" id="14_hdu6k"]
+
+[node name="Neptune" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_gvssk")]
+position = Vector2(0, -3)
+
+[node name="Ice" type="Node" parent="."]
+
+[node name="IceMedium1" parent="Ice" instance=ExtResource("2_t6mxh")]
+position = Vector2(-938, 1836)
+
+[node name="IceSmall" parent="Ice" instance=ExtResource("3_hdu6k")]
+position = Vector2(-1304, 1688)
+
+[node name="Rocks" type="Node" parent="."]
+
+[node name="Rockswarm1" type="Node2D" parent="Rocks"]
+position = Vector2(-283, 783)
+
+[node name="RocksMedium" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(3, -69)
+
+[node name="RocksMedium2" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(13, 97)
+rotation = -2.57767
+
+[node name="RocksMedium3" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-118, 10)
+rotation = 0.268058
+
+[node name="RocksMedium4" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-98, 78)
+rotation = -0.477677
+
+[node name="RocksMedium5" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-88, 244)
+rotation = -3.05535
+
+[node name="RocksMedium6" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-209, 81)
+rotation = -0.209619
+
+[node name="RocksMedium7" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-765, 118)
+rotation = -0.121109
+
+[node name="RocksMedium8" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-265, 173)
+rotation = -2.69878
+
+[node name="RocksMedium9" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-578, 405)
+rotation = 0.146949
+
+[node name="RocksMedium10" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-386, 649)
+rotation = -0.598786
+
+[node name="RocksMedium11" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-245, 381)
+rotation = -3.17646
+
+[node name="RocksMedium12" parent="Rocks/Rockswarm1" instance=ExtResource("3_b4hyu")]
+position = Vector2(-487, 157)
+rotation = -0.330728
+
+[node name="RocksLargeIsh" parent="Rocks/Rockswarm1" instance=ExtResource("3_pcp2h")]
+position = Vector2(-716, 325)
+rotation = -1.62222
+
+[node name="RocksLargeIsh2" parent="Rocks/Rockswarm1" instance=ExtResource("3_pcp2h")]
+position = Vector2(-417, 328)
+
+[node name="RocksLarge" parent="Rocks/Rockswarm1" instance=ExtResource("6_i482n")]
+position = Vector2(-596, 579)
+
+[node name="RocksSmall5" parent="Rocks/Rockswarm1" instance=ExtResource("7_cl0c0")]
+position = Vector2(-445, 125)
+
+[node name="RocksSmall6" parent="Rocks/Rockswarm1" instance=ExtResource("7_cl0c0")]
+position = Vector2(-138, 244)
+
+[node name="RocksSmall7" parent="Rocks/Rockswarm1" instance=ExtResource("7_cl0c0")]
+position = Vector2(-18, 68)
+
+[node name="RocksSmall8" parent="Rocks/Rockswarm1" instance=ExtResource("7_cl0c0")]
+position = Vector2(-200, 24)
+
+[node name="Rockswarm2" type="Node2D" parent="Rocks"]
+position = Vector2(-299, 1575)
+rotation = 0.527165
+
+[node name="RocksMedium" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(3, -69)
+
+[node name="RocksMedium2" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-479.812, -19.2239)
+rotation = -2.57767
+
+[node name="RocksMedium3" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-191.571, -285.366)
+rotation = 0.268058
+
+[node name="RocksMedium4" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-98, 78)
+rotation = -0.477677
+
+[node name="RocksMedium5" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-88, 244)
+rotation = -3.05535
+
+[node name="RocksMedium6" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-209, 81)
+rotation = -0.209619
+
+[node name="RocksMedium7" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-765, 118)
+rotation = -0.121109
+
+[node name="RocksMedium8" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-290.814, -70.2309)
+rotation = -2.69878
+
+[node name="RocksMedium9" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-578, 405)
+rotation = 0.146949
+
+[node name="RocksMedium10" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-386, 649)
+rotation = -0.598786
+
+[node name="RocksMedium11" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-245, 381)
+rotation = -3.17646
+
+[node name="RocksMedium12" parent="Rocks/Rockswarm2" instance=ExtResource("3_b4hyu")]
+position = Vector2(-487, 157)
+rotation = -0.330728
+
+[node name="RocksLargeIsh" parent="Rocks/Rockswarm2" instance=ExtResource("3_pcp2h")]
+position = Vector2(-716, 325)
+rotation = -1.62222
+
+[node name="RocksLargeIsh2" parent="Rocks/Rockswarm2" instance=ExtResource("3_pcp2h")]
+position = Vector2(-677.623, 541.405)
+
+[node name="RocksLarge" parent="Rocks/Rockswarm2" instance=ExtResource("6_i482n")]
+position = Vector2(-406.486, 323.403)
+
+[node name="RocksSmall" parent="Rocks/Rockswarm2" instance=ExtResource("7_cl0c0")]
+position = Vector2(-324.45, 190.024)
+rotation = -0.527165
+
+[node name="RocksSmall2" parent="Rocks/Rockswarm2" instance=ExtResource("7_cl0c0")]
+position = Vector2(-255.729, -103.382)
+rotation = -0.527165
+
+[node name="RocksSmall3" parent="Rocks/Rockswarm2" instance=ExtResource("7_cl0c0")]
+position = Vector2(-789.672, 195.863)
+rotation = -0.527165
+
+[node name="RocksSmall4" parent="Rocks/Rockswarm2" instance=ExtResource("7_cl0c0")]
+position = Vector2(-143.457, 393.609)
+rotation = -0.527165
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Wave" parent="Enemies" node_paths=PackedStringArray("next_stage") instance=ExtResource("8_hdu6k")]
+next_stage = NodePath("../../CanvasLayer/WinCondition")
+is_active = true
+
+[node name="Swarmer" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+
+[node name="Swarmer2" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(1317, 827)
+rotation = -2.11462
+
+[node name="Swarmer3" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(652, -334)
+rotation = 1.56292
+
+[node name="Swarmer4" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(-393, 188)
+rotation = -0.00702977
+
+[node name="Swarmer5" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(1357, -135)
+rotation = 2.67166
+
+[node name="Swarmer6" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(1812, 924)
+rotation = -2.70092
+
+[node name="Swarmer7" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(-439, -173)
+rotation = 0.614193
+
+[node name="Swarmer8" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(626, 909)
+rotation = -1.68227
+
+[node name="Swarmer9" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(1668, -257)
+rotation = 1.82986
+
+[node name="Swarmer10" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(-1066, -146)
+rotation = -0.00702977
+
+[node name="Swarmer11" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(-1457.67, 44.758)
+rotation = -0.0140595
+
+[node name="Swarmer12" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(1995, 1252)
+rotation = -2.70092
+
+[node name="Swarmer13" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(2513, 1263)
+rotation = -2.70092
+
+[node name="Swarmer14" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(2801, 1402)
+rotation = -2.70092
+
+[node name="Swarmer15" parent="Enemies/Wave" instance=ExtResource("2_s0gem")]
+position = Vector2(-1757, -21.0002)
+rotation = -0.351276
+
+[node name="Playership" parent="." instance=ExtResource("2_3uw6p")]
+position = Vector2(579, 307)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fuel" parent="CanvasLayer" instance=ExtResource("3_s0gem")]
+metadata/_edit_use_anchors_ = true
+
+[node name="WinCondition" parent="CanvasLayer" instance=ExtResource("5_pcp2h")]
+rotation = 0.0015584
+
+[node name="Loose_Condition" parent="CanvasLayer" instance=ExtResource("6_noknm")]
+offset_top = 1.0
+offset_bottom = 1.0
+this_level_path = "res://Levels/Neptune.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_hdu6k")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

@@ -1,0 +1,641 @@
+[gd_scene load_steps=10 format=3 uid="uid://yhgfqoru2ww"]
+
+[ext_resource type="PackedScene" uid="uid://bergn36fhp5ky" path="res://Space/Ambience/Background.tscn" id="1_ajk3u"]
+[ext_resource type="PackedScene" uid="uid://c80euy6kwcyw1" path="res://Space/Ambience/Rocks_Large_1.tscn" id="3_0oyjd"]
+[ext_resource type="PackedScene" uid="uid://kwiept7knikd" path="res://Space/Player/Player_Ship.tscn" id="3_obcc5"]
+[ext_resource type="PackedScene" uid="uid://cihrfbchjse7p" path="res://UI/InGame/Fuel.tscn" id="4_0oyjd"]
+[ext_resource type="PackedScene" uid="uid://h254o0txt38r" path="res://Globals/GameConditions/Win_Condition.tscn" id="6_isesl"]
+[ext_resource type="PackedScene" uid="uid://danqnqypu6qo1" path="res://Space/Resources/Ice_Small.tscn" id="7_ajk3u"]
+[ext_resource type="PackedScene" uid="uid://bw24u14yict4q" path="res://Globals/GameConditions/Loose_Condition.tscn" id="7_lqx0x"]
+[ext_resource type="PackedScene" uid="uid://baicyfql8i5c" path="res://Space/Enemies/Scoutling.tscn" id="9_bgqgx"]
+[ext_resource type="AudioStream" uid="uid://cp5s85um0v8ft" path="res://Assets/Music/Race1_2024-04-24_01.ogg" id="9_obcc5"]
+
+[node name="ScatteredDisc" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_ajk3u")]
+
+[node name="Ice" type="Node" parent="."]
+
+[node name="IceSmall" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(926, -341)
+fuel_bonus = 5
+
+[node name="IceSmall2" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(613, -1821)
+fuel_bonus = 5
+
+[node name="IceSmall3" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(-721, -2694)
+fuel_bonus = 5
+
+[node name="IceSmall4" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(-3090, -1877)
+fuel_bonus = 5
+
+[node name="IceSmall5" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(-3263, -431)
+fuel_bonus = 5
+
+[node name="IceSmall6" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(-1917, 786)
+fuel_bonus = 5
+
+[node name="IceSmall7" parent="Ice" instance=ExtResource("7_ajk3u")]
+position = Vector2(-338, 1092)
+fuel_bonus = 5
+
+[node name="Rocks" type="Node" parent="."]
+
+[node name="Inner Curve" type="Node2D" parent="Rocks"]
+position = Vector2(-262, -1917)
+
+[node name="5-Segment" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(282, 578)
+rotation = -0.168547
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment2" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(457, 1513)
+rotation = -0.164192
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment3" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-191, -237)
+rotation = -0.82136
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment4" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-1035, -713)
+rotation = 1.7771
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment5" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-1916, -487)
+rotation = 0.8859
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment6" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-2444, 286)
+rotation = 0.260246
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment7" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-2570, 1262)
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment8" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-2191, 2125)
+rotation = -0.686858
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment9" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-1360, 2534)
+rotation = -1.53178
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment10" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(-392, 2669)
+rotation = -1.32312
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment11" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(500, 3067)
+rotation = -1.01794
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment12" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(512, 2479)
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Inner Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Inner Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="3-Segment" type="Node2D" parent="Rocks/Inner Curve"]
+position = Vector2(754, 3874)
+rotation = 1.72716
+
+[node name="RocksLarge" parent="Rocks/Inner Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Inner Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(14.9999, 190)
+
+[node name="RocksLarge3" parent="Rocks/Inner Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="Outer Curve" type="Node2D" parent="Rocks"]
+position = Vector2(950, -1868)
+
+[node name="5-Segment" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(282, 578)
+rotation = -0.168547
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment2" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(457, 1513)
+rotation = -0.164192
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment2" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment3" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-191, -237)
+rotation = -0.82136
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment3" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment4" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-996, -861)
+rotation = 2.00649
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment4" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment5" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-1887, -1246)
+rotation = 1.81567
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment5" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment6" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-2858, -1320)
+rotation = 1.42336
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment6" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment7" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-3723, -965)
+rotation = 0.929775
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment7" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment8" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-4290, -210)
+rotation = 0.242916
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment8" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment9" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-3172, 2968)
+rotation = -1.53178
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment9" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment10" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-2204, 3103)
+rotation = -1.32312
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment10" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment11" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-1312, 3501)
+rotation = -1.01794
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment11" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment12" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-4491, 775)
+rotation = 0.111636
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment12" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment13" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-4461, 1750)
+rotation = -0.271371
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment13" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment13" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment13" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment13" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment13" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment14" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-3988, 2597)
+rotation = -0.772714
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment14" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment14" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment14" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment14" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment14" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment15" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(483.001, 2479)
+rotation = 0.111636
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment15" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment15" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment15" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment15" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment15" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="5-Segment16" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-125, 2936)
+rotation = 1.61553
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/5-Segment16" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/5-Segment16" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/5-Segment16" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, 392)
+
+[node name="RocksLarge4" parent="Rocks/Outer Curve/5-Segment16" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="RocksLarge5" parent="Rocks/Outer Curve/5-Segment16" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 190)
+
+[node name="3-Segment" type="Node2D" parent="Rocks/Outer Curve"]
+position = Vector2(-336, 3690)
+rotation = 0.223272
+
+[node name="RocksLarge" parent="Rocks/Outer Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, 2)
+
+[node name="RocksLarge2" parent="Rocks/Outer Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(8, -207)
+
+[node name="RocksLarge3" parent="Rocks/Outer Curve/3-Segment" instance=ExtResource("3_0oyjd")]
+position = Vector2(15, -402)
+
+[node name="Goal" type="Node" parent="."]
+
+[node name="Scoutling" parent="Goal" instance=ExtResource("9_bgqgx")]
+position = Vector2(414, 1564)
+rotation = -2.71211
+normal_speed = 0
+turn_speed_base = 3.142
+
+[node name="Playership" parent="." instance=ExtResource("3_obcc5")]
+position = Vector2(897, 573)
+start_fuel = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fuel" parent="CanvasLayer" instance=ExtResource("4_0oyjd")]
+metadata/_edit_use_anchors_ = true
+
+[node name="WinCondition" parent="CanvasLayer" instance=ExtResource("6_isesl")]
+rotation = 0.0015584
+is_active = true
+
+[node name="Loose_Condition" parent="CanvasLayer" instance=ExtResource("7_lqx0x")]
+offset_top = 1.0
+offset_bottom = 1.0
+this_level_path = "res://Levels/Scattered_Disc.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_obcc5")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

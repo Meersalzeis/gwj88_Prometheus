@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://uqq44ihsvgnx"]
+
+[ext_resource type="Script" uid="uid://b8osrt471bkty" path="res://UI/OutGameElements/audio_bus_button.gd" id="1_soati"]
+
+[node name="MusicButton" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_soati")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "                "
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+text = "                "
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+text = "                "
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 2
+text = "                "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

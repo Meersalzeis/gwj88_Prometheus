@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://p2nt34lbxvww"]
+
+[ext_resource type="PackedScene" uid="uid://bergn36fhp5ky" path="res://Space/Ambience/Background.tscn" id="1_nw1lt"]
+[ext_resource type="Script" uid="uid://b6l81mlo3x6ee" path="res://UI/OutGameElements/SceneChangeButton.gd" id="2_qvjrn"]
+[ext_resource type="AudioStream" uid="uid://b7pxvflcunws8" path="res://Assets/Music/Credits_2024-02-14_L03.ogg" id="3_lqvxy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nw1lt"]
+font_size = 28
+
+[node name="Credits" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_nw1lt")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits:"
+label_settings = SubResource("LabelSettings_nw1lt")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Meteors, ice,  player ship:
+Kenney Space Shooter redux
+Kenney Space Shooter Extensions
+https://kenney.nl/assets
+"
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Background:
+https://opengameart.org/content/space-star-background
+"
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Additional stars for background, enemies, music icon:
+Self-made using Krita
+"
+
+[node name="Label7" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music:
+https://tallbeard.itch.io/music-loop-bundle
+"
+
+[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Everything that's not Assets (Programming, Game Design...)
+Witchhat"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="backToMM" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+script = ExtResource("2_qvjrn")
+scene_path = "res://UI/Main_Menu.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lqvxy")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/backToMM" to="CenterContainer/VBoxContainer/HBoxContainer/backToMM" method="_on_pressed"]

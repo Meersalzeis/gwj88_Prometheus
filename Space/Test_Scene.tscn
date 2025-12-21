@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://ufba6c2sd75l"]
+
+[ext_resource type="Texture2D" uid="uid://d3itec1uobeby" path="res://Assets/kenney_space-shooter-redux/Backgrounds/blue.png" id="1_iyo0y"]
+[ext_resource type="PackedScene" uid="uid://kwiept7knikd" path="res://Space/Player/Player_Ship.tscn" id="2_t8gix"]
+[ext_resource type="PackedScene" uid="uid://c80euy6kwcyw1" path="res://Space/Ambience/Rocks_Large_1.tscn" id="3_x8ay3"]
+[ext_resource type="PackedScene" uid="uid://b57cf4rihsgml" path="res://Space/Ambience/Rocks_LargeIsh.tscn" id="4_aa12m"]
+[ext_resource type="PackedScene" uid="uid://bryxdnc0au6x5" path="res://Space/Resources/Ice_Medium_1.tscn" id="5_jqhve"]
+[ext_resource type="PackedScene" uid="uid://cihrfbchjse7p" path="res://UI/InGame/Fuel.tscn" id="6_txhtb"]
+[ext_resource type="PackedScene" uid="uid://cisn066cb48bf" path="res://UI/InGame/Health.tscn" id="7_pq54k"]
+[ext_resource type="PackedScene" uid="uid://cdlpb2td83gxu" path="res://Space/Enemies/Springer.tscn" id="8_nr23l"]
+
+[node name="Test_Scene" type="Node"]
+
+[node name="Sprite2D" type="Parallax2D" parent="."]
+scale = Vector2(0.75, 0.75)
+repeat_size = Vector2(256, 256)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -1.33333)
+texture = ExtResource("1_iyo0y")
+
+[node name="Playership" parent="." instance=ExtResource("2_t8gix")]
+position = Vector2(579, 307)
+
+[node name="RocksLarge" parent="." instance=ExtResource("3_x8ay3")]
+position = Vector2(135, 136)
+
+[node name="RocksLarge2" parent="." instance=ExtResource("4_aa12m")]
+position = Vector2(328, 494)
+
+[node name="IceMedium1" parent="." instance=ExtResource("5_jqhve")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fuel" parent="CanvasLayer" instance=ExtResource("6_txhtb")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" parent="CanvasLayer" instance=ExtResource("7_pq54k")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Springer" parent="." instance=ExtResource("8_nr23l")]
+position = Vector2(858, -218)

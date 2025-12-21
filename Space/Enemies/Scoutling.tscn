@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://baicyfql8i5c"]
+
+[ext_resource type="Script" uid="uid://du812js3fycjs" path="res://Space/Enemies/scoutling.gd" id="1_4msm0"]
+[ext_resource type="Texture2D" uid="uid://2srvdafaepcr" path="res://Assets/MyOwnKrita/Alien1.png" id="1_ddpr2"]
+[ext_resource type="PackedScene" uid="uid://bamgboys386cl" path="res://Space/Enemies/Hurtbox.tscn" id="2_4msm0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2x5j"]
+radius = 42.0119
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04aia"]
+size = Vector2(25, 20)
+
+[node name="Scoutling" type="CharacterBody2D" groups=["Enemy", "Laser_Interaction"]]
+collision_layer = 10
+collision_mask = 10
+script = ExtResource("1_4msm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ddpr2")
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_4msm0")]
+position = Vector2(4, -5)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-2, 4)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_g2x5j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-1, 42)
+shape = SubResource("RectangleShape2D_04aia")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2.38419e-07, -1.19209e-07)
+polygon = PackedVector2Array(45, 8, 25, 25, 15, 25, -50, -5, 15, -35, 25, -35, 45, -18)
+
+[editable path="Hurtbox"]

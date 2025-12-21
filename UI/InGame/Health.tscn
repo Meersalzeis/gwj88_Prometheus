@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cisn066cb48bf"]
+
+[ext_resource type="Script" uid="uid://cebyitwk4wxpb" path="res://UI/InGame/health.gd" id="1_ifx03"]
+
+[node name="Health" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ifx03")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 42.0
+offset_right = 86.0
+offset_bottom = 65.0
+text = "Health: 3"
