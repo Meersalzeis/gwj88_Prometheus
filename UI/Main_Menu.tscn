@@ -103,6 +103,32 @@ horizontal_alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="Selection/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="easier" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "easier ^"
+horizontal_alignment = 2
+
+[node name="empty" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="empty2" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="empty3" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="empty4" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="harder" type="Label" parent="Selection/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "harder ∨"
+vertical_alignment = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="Selection/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -187,22 +213,6 @@ stream = ExtResource("8_27718")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
-
-[node name="easier" type="Label" parent="."]
-layout_mode = 0
-offset_left = 410.0
-offset_top = 242.0
-offset_right = 470.0
-offset_bottom = 265.0
-text = "easier ^"
-
-[node name="harder" type="Label" parent="."]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 418.0
-offset_right = 466.0
-offset_bottom = 441.0
-text = "harder ∨"
 
 [connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Orth_Cloud" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Orth_Cloud" method="_on_pressed"]
 [connection signal="pressed" from="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Scattered Disc" to="Selection/VBoxContainer/HBoxContainer/VBoxContainer2/Scattered Disc" method="_on_pressed"]
